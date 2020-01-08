@@ -57,7 +57,7 @@
         const progress = document.getElementById("myBar");
         let timer = "60s";
         progress.style.animation = "move " + timer;
-        progress.style.width = "80%";
+        progress.style.width = "50%";
 
         fetch("https://jsonplaceholder.typicode.com/todos/1")
           .then(response => {
@@ -68,7 +68,10 @@
             progress.style.width = "100%";
           })
           .catch(err => {
-            console.log("err");
+            console.log(JSON.stringify(err));
+            timer = "1s";
+            progress.style.animation = "move " + timer;
+            progress.style.width = "52%";
           });
       }
     </script>
